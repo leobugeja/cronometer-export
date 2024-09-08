@@ -118,7 +118,7 @@ func parseTime(s string) (*time.Time, error) {
 			case "m", "M":
 				t = t.AddDate(0, -1*int(d), 0)
 			case "y", "Y":
-				t = t.AddDate(0, 0, -1*int(d))
+				t = t.AddDate(-1*int(d), 0, 0)
 
 			default:
 				return nil, fmt.Errorf("invalid unit %s", matches[0][2])
